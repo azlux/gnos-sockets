@@ -156,7 +156,7 @@ Render () # $1:COLORS $2:PROTO_SUFFIX $3:PATTERN $4:LISTEN $5:NUMERIC $6:FORCE $
         {
             # Filter
             raw=" " line
-            gsub("\033\[[0-9]+m" , "", raw)
+            gsub("\033\\[[0-9]+m" , "", raw)
             # print raw
             if (index(raw, pattern)) print line
         }

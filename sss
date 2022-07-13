@@ -2,7 +2,7 @@
 # NAME:  GNOS sockets
 # DESC:  Handy ss wrapper
 # FEAT:  Colors support
-# DEPS:  ss sed awk sort column sudo
+# DEPS:  ss sed awk sort column
 # LICE:  WTFPL
 # AUTH:  elias@gnos.in
 
@@ -38,7 +38,7 @@ Fix ()
 Render () # $1:COLORS $2:PROTO_SUFFIX $3:PATTERN $4:LISTEN $5:NUMERIC $6:FORCE $7:SHORT
 {
     awk -v colors=$1 -v suffix=$2 -v pattern="$3" -v listen=$4 -v numeric=$5 -v force=$6 -v short=$7 \
-        -v username=${SUDO_USER:-$USER} -v hostname=$HOSTNAME '
+        -v username=$USER -v hostname=$HOSTNAME '
 
     BEGIN {
         unknown=":"
@@ -249,14 +249,6 @@ shift "$((OPTIND-1))"
 [[ $# -gt 1 ]] && Usage 1
 pattern=$1
 shift
-
-# USER
-if [[ $( id -u ) -ne 0 ]] ; then
-    sudo "$( readlink -f "$BASH_SOURCE" )" $args && exit
-    [[ -n $colors ]] && echo -en $cyellow >&2
-    echo "WARNING: Running unprivileged"    >&2
-    [[ -n $colors ]] && echo -en $creset  >&2
-fi
 
 # OPTS
 [[ $numeric -eq 1 ]] && opts="$opts --numeric" || opts="$opts --resolve"

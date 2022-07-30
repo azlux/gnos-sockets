@@ -4,7 +4,6 @@
 
 List IP sockets
 
-- auto-sudo
 - sane CLI args & defaults
 - meaningful color scheme
 - searchable sorted output
@@ -35,4 +34,4 @@ Use the repository https://packages.azlux.fr/ and install with `apt update` and 
 ### Manually (no auto-update)
 Just copy somewhere in your `$PATH`.
 
-Depends: `ss` `sed` `awk` `sort` `column` `sudo`.
+Depends: `ss` `sed` `awk` `sort` `column`.

@@ -1,4 +1,10 @@
-<div align="center"><p align="center"><img src="https://gnos.in/img/shot/common/gnos-sockets_0.png"></img></p></div>
+# Deprecated and archived
+
+## New version here: https://github.com/azlux/sss
+
+Don't use https://github.com/azlux/gnos-sockets anymore, there will be no update anymore.
+
+If you use the repository https://packages.azlux.fr/, you don't have anything to do. The new repo will use the same command.
 
 # GNOS Sockets
 
